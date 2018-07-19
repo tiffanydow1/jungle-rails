@@ -11,6 +11,8 @@ class OrdersController < ApplicationController
     if order.valid?
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
+      #send confirmation email
+      Usermailer.order_confirmation_email(order).deliver_now
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
     end
@@ -18,6 +20,7 @@ class OrdersController < ApplicationController
   rescue Stripe::CardError => e
     redirect_to cart_path, flash: { error: e.message }
   end
+
 
   private
 
