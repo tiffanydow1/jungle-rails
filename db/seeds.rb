@@ -132,5 +132,59 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## REVIEWS
+
+puts "Creating Users"
+
+User.destroy_all
+
+User.create!({
+  name: 'User',
+  email: 'user@gmail.com',
+  password: 'password',
+  password_confirmation: 'password'
+})
+
+User.create!({
+  name: 'User',
+  email: 'user@gmail.com',
+  password: 'password',
+  password_confirmation: 'password'
+})
+
+User.create!({
+  name: 'User',
+  email: 'user@gmail.com',
+  password: 'password',
+  password_confirmation: 'password'
+})
+
+puts "Finding or Creating Categories..."
+
+review1 = Product.find(8) #hotdog slicer
+review2 = Product.find(6)  #human feet
+review3 = Product.find(2) #zebra pants
+
+review1.reviews.create!({
+  user_id: 1,
+  rating: 3,
+  description: '$26 seems a bit extreme for a piece of plastic but now I have sliced hotdogs for days.'
+})
+
+review2.reviews.create!({
+  user_id: 2,
+  rating: 1,
+  description: 'If I could give this a negative rating I would.
+   These shoes disgust me entirely. The hatred I feel when I look like them is unmatched to
+   anything I have expierenced.'
+})
+
+review3.reviews.create!({
+  user_id: 3,
+  rating: 3,
+  description: 'Someone mistook me for an actual zebra and shot me with a tranquilizer
+  while wearing these pants. But all in all, not the worst experience I have ever had.'
+})
+
 
 puts "DONE!"

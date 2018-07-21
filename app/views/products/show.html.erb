@@ -26,6 +26,11 @@
       </div>
     </div>
 
+    <div id="product_reviews">
+      <% if current_user %>
+        <%= render 'reviewform' %>
+      <% end %>
+    </div>
+    <%= render 'reviews' %>
   </article>
-
 </section>

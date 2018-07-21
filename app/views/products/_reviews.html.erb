@@ -1,0 +1,8 @@
+      <h4>Customer Reviews</h4>
+
+      <% @product.reviews.reverse_each do |review| %>
+      <div>
+        <%= review.rating %>
+        <%= review.description %>
+      <% end %>
+      </div>
