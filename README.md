@@ -2,6 +2,12 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+##Screenshots
+!['Order Page'](https://github.com/tiffanydow1/jungle-rails/blob/master/docs/order-page.png?raw=true)
+
+!['Product Page'](https://github.com/tiffanydow1/jungle-rails/blob/master/docs/product-page.png?raw=true)
+
+!['Review Section on Product Page'](https://github.com/tiffanydow1/jungle-rails/blob/master/docs/review-section.png?raw=true)
 
 ## Setup
 
