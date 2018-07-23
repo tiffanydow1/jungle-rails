@@ -14,8 +14,15 @@
         <div class="timeline-body">
         <p><%= review.description %></p>
         </div>
+        <% if current_user == review.user %>
+          <%= link_to "Destroy", product_review_url(@product.id, review.id), class: 'pull-right delete btn btn-lg btn-danger',
+            method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
         </div>
       </div>
     </ul>
   </div>
   <% end %>
+
+
+
