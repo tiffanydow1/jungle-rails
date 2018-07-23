@@ -1,8 +1,21 @@
-      <h4>Customer Reviews</h4>
-
-      <% @product.reviews.reverse_each do |review| %>
-      <div>
-        <%= review.rating %>
-        <%= review.description %>
-      <% end %>
+ <div class="review-header">
+  <h4>Customer Reviews</h4>
+</div>
+  <% @product.reviews.reverse_each do |review| %>
+  <div class="container">
+    <ul class="user-review">
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h4 class="timeline-title">Reviews <%(1..(review.rating)).each do |i| %>
+          <%= fa_icon 'star' %>
+          <% end %></h4>
+          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>
+          <%= review.created_at.to_formatted_s(:long) %></small></p>
+        <div class="timeline-body">
+        <p><%= review.description %></p>
+        </div>
+        </div>
       </div>
+    </ul>
+  </div>
+  <% end %>
